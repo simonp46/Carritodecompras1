@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celulares el paisa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Harmattan&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <!--encabezado-->
+        <div id ="jumbo" class="jumbotron jumbotron-fluid" style="background-image: url(https://i.blogs.es/fefe09/comparativa-smartphones-gama-alta-diciembre-2017/1366_521.png); background-repeat: no-repeat; background-size: cover; color: ivory">
+            <div class="container">
+              <h1 class="display-4" style="font-size: 3em; font-family: 'Staatliches', cursive;"><span class="span">Celulares el Paisa</span></h1>
+              <p class="lead" style="font-size: 1.5em; font-family: 'Harmattan', sans-serif"><span class="span">llevate hasta un 30% de descuento en la primer compra.</span></p>
+            </div>
+        </div>
+        <!--tabla izquierda, lista de productos-->
+        <div id="contproductos">
+            <table class="table table-sm" style="font-family: 'Harmattan', sans-serif; text-align: center">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Cantidad</th>
+                    <th>Agregar al carrito</th>
+                </thead>
+                <tbody id="productos" style="font-size: 1em; font-family: 'Staatliches', cursive;">
+
+                </tbody>
+            </table>
+        </div>
+        <!--tabla derecha, carrito con productos agregados-->
+        <div id="contcarrito">
+            <table class="table table-sm" style="font-family: 'Harmattan', sans-serif; text-align: center">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Precio unitario</th>
+                    <th>Cantidad</th>
+                    <th>Precio total</th>
+                    <th>Quitar del carrito</th>
+                </thead>
+                <tbody id="carrito" style="font-size: 1em; font-family: 'Staatliches', cursive">
+                </tbody>
+            </table>
+        </div>
+        <!--izq- mensaje de error-->
+        <div class= "error">
+            <div id="mensaje" class="alert alert-primary" style = "background-color: #1c01b6 !important; height: 2.5em; color: ivory; text-align: center; font-size: 1em; font-family: 'Harmattan', sans-serif; text-transform: uppercase; border: 0px; border-radius: 0px;"></div>
+        </div>
+        <!--der- finalización de compra-->
+        <div class="fin">
+            <button id="completarCompra" onclick="completarCompra()" class="btn btn-outline-dark" style="background-color: #1a02f1; color: ivory !important; max-height: 2.5em; border: 0px; border-radius: 0px;">Completar compra</button>
+            <div id="total" class="alert alert-primary" style="background-color: #08f800 !important; color: #363958 !important; max-height: 2.5em; text-align: center; font-size: 1em; line-height: 1em; font-family: 'Harmattan', sans-serif; font-weight: 700; text-transform: uppercase; border: 0px; border-radius: 0px;"></div>
+        </div>
+        <!--pie de página informativo-->
+        <div class="footer">
+            <p class="span" style="font-size: 1em; font-family: 'Harmattan', sans-serif; color: ivory; text-align: center">Celulares el paisa. Medellín Colombia. Horario: Lunes a Sábados de 9 a 19hs. Contacto: 3045374560.</p>
+            <p style="width: 100%; font-size: 1em; font-family: 'Harmattan', sans-serif; color: #363958; margin-top: 0px; text-align: center">Desarrollado por Simon Padron para el curso de Programacion para la web - Cesde 2021</p>
+        </div>
+    </div>
+    <script src="/funciones.js"></script>
+</body>
+</html>
