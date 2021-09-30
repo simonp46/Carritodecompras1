@@ -10,73 +10,85 @@ var productos = [
         ID: 1,
         nombre: "Celular Samsung Galaxy A21s 128gb 4g",
         precioUnitario: 669900,
-        stock: 140
+        stock: 140,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 2,
         nombre: "Celular Realme 8 Pro / 128gb / 108mp / 8ram",
         precioUnitario: 1089900,
-        stock: 120
+        stock: 120,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 3,
         nombre: "Xiaomi Redmi Note 10 Pro (Global) Dual SIM 128 GB gris ónix 8 GB RAM",
         precioUnitario: 1509900,
-        stock: 90
+        stock: 90,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 4,
         nombre: "Celular Samsung Galaxy M12 128gb Dual Sim + Audífonos Gratis",
         precioUnitario: 619900,
-        stock: 108
+        stock: 108,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 5,
         nombre: "Apple iPhone 12 Pro Max (256 GB) - Grafito",
         precioUnitario: 5236740,
-        stock: 58
+        stock: 58,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 6,
         nombre: "Celular Tecno Pova2 128gb - 6gb Ram 7000 Mah+forro+audífonos",
         precioUnitario: 789900,
-        stock: 85
+        stock: 85,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 7,
         nombre: "Moto G9 Plus Dual SIM 128 GB azul dive 4 GB RAM",
         precioUnitario: 798700,
-        stock: 12
+        stock: 12,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 8,
         nombre: "Samsung Galaxy Note20 Ultra Dual SIM 256 GB negro místico 8 GB RAM",
         precioUnitario: 4159900,
-        stock: 30
+        stock: 30,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 9,
         nombre: "Xiaomi Poco F3 5G Dual SIM 128 GB negro nocturno 6 GB RAM",
         precioUnitario: 1638900,
-        stock: 74
+        stock: 74,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 10,
         nombre: "Samsung Galaxy S20 FE 256 GB cloud navy 6 GB RAM",
         precioUnitario: 2319000,
-        stock: 14
+        stock: 14,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 11,
         nombre: "Realme 7 Pro Dual SIM 128 GB mirror blue 8 GB RAM",
         precioUnitario: 1029900,
-        stock: 86
+        stock: 86,
+        Imagen: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     {   
         ID: 12,
         nombre: "iPhone 11 128gb 4ram 12mpx A13",
         precioUnitario: 2899900,
-        stock: 111
+        stock: 111,
+        srcImg: 'https://i.linio.com/p/4d92b88c7030812298e7fdb28d5a08bd-product.jpg'
     },
     
 ];
@@ -88,6 +100,7 @@ function crearTabla(productos){
     var fila = document.createElement('tr');
 
     //Nodos celda y tipo de etiqueta
+    var Imagen = document.createElement('td');
     var nombre = document.createElement('td');
     var precio = document.createElement('td');
     var stock = document.createElement('td');
@@ -97,6 +110,7 @@ function crearTabla(productos){
     var comprarBtn = document.createElement('button');
 
     //Nodos texto y contenido
+    var imgText = document.createTextNode(productos.Imagen);
     var nomText = document.createTextNode(productos.nombre);
     var precText = document.createTextNode(productos.precioUnitario);
     var stockText = document.createTextNode(productos.stock);
@@ -108,6 +122,7 @@ function crearTabla(productos){
     comprarBtn.addEventListener('click', arrayProductos);    
     
     //Agregar los nodos texto y etiqueta a los nodos celda
+    Imagen.appendChild(imgText);
     nombre.appendChild(nomText);
     precio.appendChild(precText);
     stock.appendChild(stockText);
@@ -117,6 +132,7 @@ function crearTabla(productos){
 
 
     //Y agregar las celdas a la fila
+    fila.appendChild(Imagen);
     fila.appendChild(nombre);
     fila.appendChild(precio);
     fila.appendChild(stock);
@@ -125,7 +141,7 @@ function crearTabla(productos){
 
     //Enviar las filas al cuerpo de la tabla creada en el HTML
     var tbody = document.querySelector('#productos');
-    tbody.appendChild(fila);
+    tbody.appendChild(fila);   
 }
 
 
@@ -151,6 +167,7 @@ function agregarCarrito(e){
     var filaC = document.createElement('tr');
 
     //Crear celdas para los productos comprados
+    var ImagenC = document.createElement('td');
     var nombreC = document.createElement('td');
     var precioC = document.createElement('td');
     var cantidadC = document.createElement('td');
@@ -162,6 +179,7 @@ function agregarCarrito(e){
     quitarCBot.addEventListener("click", quitarFila);
 
     //tomar los valores del elemento e y agregarlos a la tabla
+    var ImagenCTxt = document.createTextNode(e.target.parentNode.parentNode.imgText.innerHTML);
     var nombreCTxt = document.createTextNode(e.target.parentNode.parentNode.firstChild.innerHTML);
     var precioCTxt = document.createTextNode(e.target.parentNode.parentNode.childNodes[1].innerHTML);
     var cantidadCTxt = document.createTextNode(e.target.parentNode.parentNode.childNodes[3].firstChild.value);
@@ -169,6 +187,7 @@ function agregarCarrito(e){
     var quitarTxt = document.createTextNode('Quitar');
 
     //Agregar nodos de texto y etiqueta a las celdas
+    ImagenC.appendChild(ImagenCTxt);
     nombreC.appendChild(nombreCTxt);
     precioC.appendChild(precioCTxt);
     cantidadC.appendChild(cantidadCTxt);
@@ -177,6 +196,7 @@ function agregarCarrito(e){
     quitarC.appendChild(quitarCBot);
 
     //Agregar todas las celdas en una fila
+    filaC.appendChild(ImagenC);
     filaC.appendChild(nombreC);
     filaC.appendChild(precioC);
     filaC.appendChild(cantidadC);
